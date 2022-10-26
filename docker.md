@@ -145,3 +145,18 @@ Network namespace提供了系统网络资源的隔离，包括IPv4、IPv6 协议
 
 #### **2.2.6 User namespace**
 User namespace隔离了安全相关的标识与属性，包括用户ID，组ID，root目录，密钥，特殊权限等。普通用户创建的容器，在容器内部可以拥有超级用户的权限。
+
+#### **2.2.7 Cgroup namespace**
+Cgroup namespace限制和隔离一组进程对系统资源的使用。对不同资源的具体管理是由各个子系统分工完成的。
+|**子系统**|**作用**             |
+|----------|---------------------|
+|devices   |设备权限控制          |
+|cpuset    |分配指定的CPU和内存节点|
+|CPU       |控制CPU使用率         |
+|cpuacct   |统计CPU使用情况       |
+|memory    |限制内存的使用上限    |
+|freezer   |暂停Cgroup 中的进程   |
+|net_cls   |配合流控限制网络带宽   |
+|net_prio  |设置进程的网络流量优先级|
+|perf_event|允许 Perf 工具基于 Cgroup 分组做性能检测|
+|huge_tlb  |限制 HugeTLB 的使用   |
