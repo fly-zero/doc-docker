@@ -53,7 +53,7 @@
 ```
 #### **2.1.2 Union FS**
 Union FS是联合文件系统，它允许对多个目录挂载到同一个挂载点，并得到一个合并的目录结构视图。Union FS有上下层关系，上下层中同名的文件在挂载点中是上层覆盖下层。
-![](overlay_constructs.jpg)
+![](assets/overlay_constructs.jpg)
 
 假设有下面这样一个文件树视图
 
@@ -141,7 +141,7 @@ Mount namespace提供了挂载点的隔离。在一个Mount namespace中挂载�
 
 #### **2.2.5 Network namespace**
 Network namespace提供了系统网络资源的隔离，包括IPv4、IPv6 协议栈，IP 路由表，防火墙规则，端口号，socket等。容器内部的虚拟网卡通过veth与docker0网桥通信。
-![](docker-network.jfif)
+![](assets/docker-network.jfif)
 
 #### **2.2.6 User namespace**
 User namespace隔离了安全相关的标识与属性，包括用户ID，组ID，root目录，密钥，特殊权限等。普通用户创建的容器，在容器内部可以拥有超级用户的权限。
