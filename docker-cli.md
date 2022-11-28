@@ -1,6 +1,6 @@
 # **Docker 命令行的基本用法**
 
-# **目录**
+## **目录**
 
 - [**1 拉取镜像**](#1-拉取镜像)
 - [**2 运行容器**](#2-运行容器)
@@ -101,17 +101,17 @@ docker run [options] <image> [cmd]
     # 创建容器：将主机路径 /host/path 挂载到容器路径 /container/path，并在容器中执行 ls 命令
     docker run --rm -v /host/path:/container/path ubuntu:latest ls /container/path
     ```
-
+    
     - 示例：挂载 volume 到容器中
-
+    
     ```bash
     # 创建 volume
     docker volume create my-volume
-
+    
     # 创建容器：将 my-volume 挂载到容器路径 /container/path，并在容器中执行 ls 命令
     docker volume --rm -v my-volume:/container/path ubuntu:latest ls /container/path
     ```
-
+    
     > PS：volume 可用于存储数据、配置等，当升级镜像版本后重新挂载 volume 从而达到保持配置和数据不变的效果
 
 - `--env , -e`
@@ -547,10 +547,10 @@ Dockerfile 的详细语法可参考 [Docker Reference - Dockerfile](https://docs
     ```bash
     # 查看当前工作目录
     pwd
-
+    
     # 列出 / 目录下的文件
     echo /*
-
+    
     # 退出容器
     exit
     ```
